@@ -68,6 +68,7 @@ case "$stack" in
     # the package list is found by using ci:debug then running ldd $GOOGLE_CHROME_BIN | grep not
     # also look here for more packages/notes https://developers.google.com/web/tools/puppeteer/troubleshooting
     PACKAGES="
+      wget
       gconf-service
       libappindicator1
       libasound2
@@ -208,3 +209,23 @@ cat <<EOF >$BUILD_DIR/.profile.d/010_google-chrome.sh
 export GOOGLE_CHROME_BIN="\$HOME/.apt/opt/google/$BIN"
 export GOOGLE_CHROME_SHIM="\$HOME/.apt/usr/bin/$SHIM"
 EOF
+
+mkdir debs
+cd debs
+wget http://ftp.osuosl.org/pub/ubuntu/pool/universe/m/mingw-w64/mingw-w64_5.0.3-1_all.deb
+wget http://de.archive.ubuntu.com/ubuntu/pool/universe/n/nsis/nsis-pluginapi_2.51-1_all.deb
+wget http://th.archive.ubuntu.com/ubuntu/pool/universe/n/nsis/nsis-common_2.51-1_all.deb
+wget http://mirrors.edge.kernel.org/ubuntu/pool/universe/n/nsis/nsis_2.51-1_amd64.deb
+
+dpkg -i --force-depends mingw.deb
+dpkg -i mingw.deb
+#PLUGIN
+dpkg -i --force-depends nsis-plugin.deb
+dpkg -i nsis-plugin.deb
+
+#COMMON
+dpkg -i nsis-common.deb
+
+#NSIS
+dpkg -i nsis_install.deb
+dpkg -i --force-depends nsis_install.deb
