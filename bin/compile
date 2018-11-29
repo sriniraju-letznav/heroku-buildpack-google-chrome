@@ -217,15 +217,15 @@ wget http://de.archive.ubuntu.com/ubuntu/pool/universe/n/nsis/nsis-pluginapi_2.5
 wget http://th.archive.ubuntu.com/ubuntu/pool/universe/n/nsis/nsis-common_2.51-1_all.deb
 wget http://mirrors.edge.kernel.org/ubuntu/pool/universe/n/nsis/nsis_2.51-1_amd64.deb
 
-dpkg -i --force-depends mingw.deb
-dpkg -i mingw.deb
+sudo dpkg -i --force-depends mingw.deb
+sudo dpkg -i mingw.deb
 #PLUGIN
-dpkg -i --force-depends nsis-plugin.deb
-dpkg -i nsis-plugin.deb
+sudo dpkg -i --force-depends nsis-plugin.deb
+sudo dpkg -i nsis-plugin.deb
 
 #COMMON
-dpkg -i nsis-common.deb
+sudo dpkg -i nsis-common.deb
 
 #NSIS
-dpkg -i nsis_install.deb
-dpkg -i --force-depends nsis_install.deb
+sudo dpkg -i nsis_install.deb
+sudo dpkg -i --force-depends nsis_install.deb
