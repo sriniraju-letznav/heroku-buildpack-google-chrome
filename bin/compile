@@ -69,8 +69,11 @@ case "$stack" in
     # also look here for more packages/notes https://developers.google.com/web/tools/puppeteer/troubleshooting
     PACKAGES="
       wget
+      nsis-common
+      mingw-w64
+      zlib1g
       nsis
-      nsis-pluginapi_2.51-1_all
+      nsis-pluginapi
       gconf-service
       libappindicator1
       libasound2
