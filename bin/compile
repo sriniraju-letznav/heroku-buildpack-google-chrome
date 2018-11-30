@@ -70,6 +70,8 @@ case "$stack" in
     PACKAGES="
       wget
       nsis-common
+      binutils-mingw-w64
+      libz-mingw-w64
       mingw-w64
       zlib1g
       nsis
