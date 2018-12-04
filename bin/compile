@@ -68,14 +68,6 @@ case "$stack" in
     # the package list is found by using ci:debug then running ldd $GOOGLE_CHROME_BIN | grep not
     # also look here for more packages/notes https://developers.google.com/web/tools/puppeteer/troubleshooting
     PACKAGES="
-      wget
-      nsis-common
-      binutils-mingw-w64
-      libz-mingw-w64
-      mingw-w64
-      zlib1g
-      nsis
-      nsis-pluginapi
       gconf-service
       libappindicator1
       libasound2
