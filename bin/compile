@@ -69,6 +69,7 @@ case "$stack" in
     # also look here for more packages/notes https://developers.google.com/web/tools/puppeteer/troubleshooting
     PACKAGES="
       scons
+      zlib1g-dev
       g++
       build-essential
       nsis-common
